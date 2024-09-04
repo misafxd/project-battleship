@@ -1,0 +1,81 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.battleship-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f3f4f6;
+  padding: 1rem;
+}
+
+.game-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.boards-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.player-section {
+  text-align: center;
+}
+
+.player-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 0.25rem;
+}
+
+.board-cell {
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.cell-empty {
+  background-color: #bfdbfe;
+}
+
+.cell-ship {
+  background-color: #6b7280;
+}
+
+.cell-hit {
+  background-color: #ef4444;
+}
+
+.cell-miss {
+  background-color: #ffffff;
+}
+
+.message-section {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.game-message {
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.turn-indicator {
+  font-size: 1rem;
+}
