@@ -1,5 +1,6 @@
 import { Ship } from './ship';
 import { GameBoard } from './gameboard';
+import { Player } from './player';
 
 describe('Ship methods', () => {
   let ship;
@@ -103,5 +104,16 @@ describe('Gameboard methods', () => {
     expect(ship.isSunk()).toBeFalsy();
     gameboard.receiveAttack(0, 4);
     expect(ship.isSunk).toBeTruthy();
+  });
+});
+
+describe('Player methods', () => {
+  let player1;
+  beforeEach(() => {
+    player1 = new Player();
+  });
+
+  test('each player should contain its own gameboard', () => {
+    expect(player1).toHaveProperty('board');
   });
 });
