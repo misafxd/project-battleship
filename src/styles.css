@@ -98,3 +98,32 @@ body {
 .turn-indicator {
   font-size: 1rem;
 }
+
+#player-vs-player,
+#player-vs-computer,
+#new-game {
+  background-color: #2f71d4;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+#player-vs-player:hover,
+#player-vs-computer:hover,
+#new-game:hover {
+  background-color: #213488;
+}
+
+#player-vs-player:active,
+#player-vs-computer:active,
+#new-game:hover {
+  background-color: #213488;
+  transform: scale(0.95);
+}

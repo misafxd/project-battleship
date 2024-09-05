@@ -17,6 +17,7 @@ const Game = function () {
   const message = document.querySelector('.game-message');
   const newGameButton = document.createElement('button');
   newGameButton.textContent = 'New Game';
+  newGameButton.id = 'new-game';
 
   const Ships = [
     {
@@ -195,8 +196,9 @@ const Game = function () {
     if (currentPlayer.board.allSunk()) {
       switchPlayer();
       message.textContent = `${currentPlayer.name} wins`;
-      turn.style.display = 'none';
+      turn.textContent = '';
       newGameButton.style.display = 'block';
+
       gameStatus = false;
       newGameButton.addEventListener('click', init);
       container.appendChild(newGameButton);
@@ -225,7 +227,7 @@ const Game = function () {
     const selection = document.querySelector('.mode-selection');
     selection.style.display = 'block';
     newGameButton.style.display = 'none';
-
+    message.textContent = '';
     board1.innerHTML = '';
     board2.innerHTML = '';
     document
@@ -245,8 +247,6 @@ const Game = function () {
   };
 
   return {
-    showGameboard,
-    newGame,
     init,
   };
 };
