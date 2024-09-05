@@ -10,6 +10,14 @@ export class GameBoard {
     return Array.from({ length: this.size }, () => Array(this.size).fill(null));
   }
 
+  clearBoard() {
+    this.board = Array.from({ length: this.size }, () =>
+      Array(this.size).fill(null),
+    );
+    this.ships = [];
+    this.missedAttacks = [];
+  }
+
   placeShip(x, y, ship, orientation) {
     if (orientation === 'horizontal') {
       if (y + ship.length > this.size) {
@@ -49,6 +57,17 @@ export class GameBoard {
     } else {
       this.missedAttacks.push([x, y]);
       return false;
+    }
+  }
+
+  getHitStatus(row, col) {
+    const cell = this.board[row][col];
+    if (cell === null) {
+      return 'empty';
+    } else if (cell.hits > 0) {
+      return 'hit';
+    } else {
+      return 'ship';
     }
   }
 

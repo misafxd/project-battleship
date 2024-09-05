@@ -69,7 +69,8 @@ body {
   background-color: #41454d;
 }
 
-.cell-empty {
+.cell-empty,
+.board-cell.hide {
   background-color: #bfdbfe;
 }
 
@@ -101,7 +102,8 @@ body {
 
 #player-vs-player,
 #player-vs-computer,
-#new-game {
+#new-game,
+#start-game {
   background-color: #2f71d4;
   color: #ffffff;
   border: none;
@@ -117,13 +119,15 @@ body {
 
 #player-vs-player:hover,
 #player-vs-computer:hover,
-#new-game:hover {
+#new-game:hover,
+#start-game:hover {
   background-color: #213488;
 }
 
 #player-vs-player:active,
 #player-vs-computer:active,
-#new-game:hover {
+#new-game:active,
+#start-game:active {
   background-color: #213488;
   transform: scale(0.95);
 }
