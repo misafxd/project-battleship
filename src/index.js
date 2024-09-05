@@ -11,6 +11,8 @@ const Game = function () {
   let name1;
   let name2;
   const container = document.querySelector('.message-section');
+  const options = document.getElementById('options');
+  const randomize = document.getElementById('randomize-buttons');
   const board1 = document.querySelector('.game-board-1');
   const board2 = document.querySelector('.game-board-2');
   const turn = document.querySelector('.turn-indicator');
@@ -89,7 +91,7 @@ const Game = function () {
       randomizeShips(player1);
       renderBoard(player1.board, board1, true);
     });
-    container.appendChild(randomizeButton1);
+    randomize.appendChild(randomizeButton1);
     let randomizeButton2;
     if (gameMode === 'player-vs-player') {
       randomizeButton2 = document.createElement('button');
@@ -100,10 +102,10 @@ const Game = function () {
         randomizeShips(player2);
         renderBoard(player2.board, board2, true);
       });
-      container.appendChild(randomizeButton2);
+      randomize.appendChild(randomizeButton2);
     }
 
-    container.appendChild(startGameButton);
+    options.appendChild(startGameButton);
   };
 
   const setShips = (player) => {

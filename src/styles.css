@@ -89,6 +89,7 @@ body {
 .message-section {
   margin-top: 1rem;
   text-align: center;
+  min-width: 50%;
 }
 
 .game-message {
@@ -136,4 +137,21 @@ body {
 #randomize-ships-2:active {
   background-color: #213488;
   transform: scale(0.95);
+}
+
+#options {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+#randomize-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+#start-game {
+  max-width: 10rem;
 }
