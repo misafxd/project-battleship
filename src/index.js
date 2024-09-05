@@ -52,17 +52,9 @@ const Game = function () {
       player2 = new Player(name2);
     }
     currentPlayer = player1;
-
     setShips(player1);
     setShips(player2);
-
-    if (gameMode === 'player-vs-player') {
-      renderPreview();
-    } else {
-      showGameboard();
-    }
-    // showGameboard();
-
+    renderPreview();
     newGameButton.remove();
     if (message.firstChild) {
       message.firstChild.remove();
@@ -74,7 +66,10 @@ const Game = function () {
     board2.innerHTML = '';
 
     renderBoard(player1.board, board1, true);
-    renderBoard(player2.board, board2, true);
+
+    if (gameMode === 'player-vs-player') {
+      renderBoard(player2.board, board2, true);
+    }
     const startGameButton = document.createElement('button');
     startGameButton.textContent = 'Start Game';
     startGameButton.id = 'start-game';
@@ -82,11 +77,40 @@ const Game = function () {
       showGameboard();
       message.textContent = '';
       startGameButton.remove();
+      randomizeButton1.remove();
+      randomizeButton2.remove();
     });
+
+    const randomizeButton1 = document.createElement('button');
+    randomizeButton1.textContent = `Randomize ${player1.name}'s Ships`;
+    randomizeButton1.id = 'randomize-ships-1';
+    randomizeButton1.addEventListener('click', () => {
+      player1.board.clearBoard();
+      randomizeShips(player1);
+      renderBoard(player1.board, board1, true);
+    });
+    container.appendChild(randomizeButton1);
+    let randomizeButton2;
+    if (gameMode === 'player-vs-player') {
+      randomizeButton2 = document.createElement('button');
+      randomizeButton2.textContent = `Randomize ${player2.name}'s Ships`;
+      randomizeButton2.id = 'randomize-ships-2';
+      randomizeButton2.addEventListener('click', () => {
+        player2.board.clearBoard();
+        randomizeShips(player2);
+        renderBoard(player2.board, board2, true);
+      });
+      container.appendChild(randomizeButton2);
+    }
+
     container.appendChild(startGameButton);
   };
 
   const setShips = (player) => {
+    randomizeShips(player);
+  };
+
+  const randomizeShips = (player) => {
     Ships.forEach((shipType) => {
       for (let i = 0; i < shipType.quantity; i++) {
         let placed = false;

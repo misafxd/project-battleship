@@ -103,7 +103,9 @@ body {
 #player-vs-player,
 #player-vs-computer,
 #new-game,
-#start-game {
+#start-game,
+#randomize-ships-1,
+#randomize-ships-2 {
   background-color: #2f71d4;
   color: #ffffff;
   border: none;
@@ -120,14 +122,18 @@ body {
 #player-vs-player:hover,
 #player-vs-computer:hover,
 #new-game:hover,
-#start-game:hover {
+#start-game:hover,
+#randomize-ships-1:hover,
+#randomize-ships-2:hover {
   background-color: #213488;
 }
 
 #player-vs-player:active,
 #player-vs-computer:active,
 #new-game:active,
-#start-game:active {
+#start-game:active,
+#randomize-ships-1:active,
+#randomize-ships-2:active {
   background-color: #213488;
   transform: scale(0.95);
 }
