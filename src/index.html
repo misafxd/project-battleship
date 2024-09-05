@@ -7,16 +7,27 @@
   </head>
   <body>
     <main class="battleship-container">
-      <h1 class="gametitle">Battleship</h1>
+      <h1 class="game-title">Battleship</h1>
+
       <div class="boards-container">
-        <div class="player-section">
-          <h2 class="player-name"></h2>
-          <div class="game-board"></div>
-        </div>
+        <section class="player-section">
+          <h2 class="player-name-1" contenteditable="true">Player 1</h2>
+          <span class="edit-name">Click name to edit</span>
+          <div class="game-board-1"></div>
+        </section>
+        <section class="player-section">
+          <h2 class="player-name-2" contenteditable="true">Player 2</h2>
+          <span class="edit-name">Click name to edit</span>
+          <div class="game-board-2"></div>
+        </section>
       </div>
       <div class="message-section">
         <p class="game-message"></p>
         <p class="turn-indicator"></p>
+        <div class="mode-selection">
+          <button id="player-vs-player">Player vs Player</button>
+          <button id="player-vs-computer">Player vs Computer</button>
+        </div>
       </div>
     </main>
   </body>

@@ -1,7 +1,13 @@
-body {
-  font-family: Arial, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
 }
 
 .battleship-container {
@@ -16,7 +22,7 @@ body {
 
 .game-title {
   font-size: 2rem;
-  font-weight: bold;
+  font-weight: 800;
   margin-bottom: 1rem;
 }
 
@@ -30,13 +36,22 @@ body {
   text-align: center;
 }
 
-.player-name {
+.player-name-1,
+.player-name-2 {
   font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
+  font-weight: 800;
+  margin: 0;
 }
 
-.game-board {
+.edit-name {
+  font-size: 0.7rem;
+  margin: 0;
+  font-weight: bold;
+  line-height: 2rem;
+}
+
+.game-board-1,
+.game-board-2 {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   gap: 0.25rem;
@@ -48,6 +63,10 @@ body {
   border: none;
   border-radius: 0.25rem;
   cursor: pointer;
+}
+
+.board-cell:hover {
+  background-color: #41454d;
 }
 
 .cell-empty {

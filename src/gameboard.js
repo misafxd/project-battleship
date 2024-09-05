@@ -51,4 +51,8 @@ export class GameBoard {
       return false;
     }
   }
+
+  allSunk() {
+    return this.ships.every((ship) => ship.sunk === true);
+  }
 }

@@ -95,15 +95,15 @@ describe('Gameboard methods', () => {
   test('should calculates if a ship is sunk based on its length and hits', () => {
     gameboard.placeShip(0, 0, ship, 'horizontal');
     gameboard.receiveAttack(0, 0);
-    expect(ship.isSunk()).toBeFalsy();
+    expect(gameboard.allSunk()).toBeFalsy();
     gameboard.receiveAttack(0, 1);
-    expect(ship.isSunk()).toBeFalsy();
+    expect(gameboard.allSunk()).toBeFalsy();
     gameboard.receiveAttack(0, 2);
-    expect(ship.isSunk()).toBeFalsy();
+    expect(gameboard.allSunk()).toBeFalsy();
     gameboard.receiveAttack(0, 3);
-    expect(ship.isSunk()).toBeFalsy();
+    expect(gameboard.allSunk()).toBeFalsy();
     gameboard.receiveAttack(0, 4);
-    expect(ship.isSunk).toBeTruthy();
+    expect(gameboard.allSunk()).toBeTruthy();
   });
 });
 
