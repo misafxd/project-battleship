@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Battleship</title>
+  <script defer src="main.js"></script></head>
+  <body>
+    <main class="battleship-container">
+      <h1 class="game-title">Battleship</h1>
+
+      <div class="boards-container">
+        <section class="player-section">
+          <h2 class="player-name-1" contenteditable="true">Player 1</h2>
+          <span class="edit-name">Click name to edit</span>
+          <div class="game-board-1"></div>
+        </section>
+        <section class="player-section">
+          <h2 class="player-name-2" contenteditable="true">Player 2</h2>
+          <span class="edit-name">Click name to edit</span>
+          <div class="game-board-2"></div>
+        </section>
+      </div>
+      <div class="message-section">
+        <p class="game-message"></p>
+        <p class="turn-indicator"></p>
+        <div class="mode-selection">
+          <button id="player-vs-player">Player vs Player</button>
+          <button id="player-vs-computer">Player vs Computer</button>
+        </div>
+        <div id="options">
+          <div id="randomize-buttons"></div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
