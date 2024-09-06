@@ -54,4 +54,12 @@ The game allows players to compete against each other or against the computer. E
 ### Restart the game:
 - Click "New Game" to start a new game after the current game ends.
 
+## ScreenShots
+
+![image](https://github.com/user-attachments/assets/4c02db4d-22cf-4ce7-9ea3-edce55e56636)
+
+![image](https://github.com/user-attachments/assets/688b77c2-df66-4331-afa3-4825faaeba9a)
+
+
+
 ## Enjoy playing Battleship!
