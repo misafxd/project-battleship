@@ -87,6 +87,8 @@ body {
 }
 
 .message-section {
+  display: flex;
+  flex-direction: column;
   margin-top: 1rem;
   text-align: center;
   min-width: 50%;
@@ -154,4 +156,7 @@ body {
 
 #start-game {
   max-width: 10rem;
+}
+
+#new-game {
 }

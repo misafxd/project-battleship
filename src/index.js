@@ -71,7 +71,27 @@ const Game = function () {
 
     if (gameMode === 'player-vs-player') {
       renderBoard(player2.board, board2, true);
+    } else {
+      renderBoard(player2.board, board2);
     }
+
+    const existingStartButton = document.getElementById('start-game');
+    if (existingStartButton) {
+      existingStartButton.remove();
+    }
+
+    const existingRandomizeButton1 =
+      document.getElementById('randomize-ships-1');
+    if (existingRandomizeButton1) {
+      existingRandomizeButton1.remove();
+    }
+
+    const existingRandomizeButton2 =
+      document.getElementById('randomize-ships-2');
+    if (existingRandomizeButton2) {
+      existingRandomizeButton2.remove();
+    }
+
     const startGameButton = document.createElement('button');
     startGameButton.textContent = 'Start Game';
     startGameButton.id = 'start-game';
@@ -80,7 +100,9 @@ const Game = function () {
       message.textContent = '';
       startGameButton.remove();
       randomizeButton1.remove();
-      randomizeButton2.remove();
+      if (gameMode === 'player-vs-player') {
+        randomizeButton2.remove();
+      }
     });
 
     const randomizeButton1 = document.createElement('button');
