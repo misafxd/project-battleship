@@ -64,6 +64,8 @@ export class GameBoard {
     const cell = this.board[row][col];
     if (cell === null) {
       return 'empty';
+    } else if (cell.sunk) {
+      return 'sunk';
     } else if (cell.hits > 0) {
       return 'hit';
     } else {

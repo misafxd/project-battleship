@@ -202,6 +202,7 @@ const Game = function () {
           cellType = board.getHitStatus(rowIndex, cellIndex);
         }
         const cellElement = createCell(cellType, rowIndex, cellIndex);
+
         container.appendChild(cellElement);
       });
     });
@@ -241,7 +242,6 @@ const Game = function () {
     cell.dataset.attacked = 'true';
     switchPlayer();
     let response = currentPlayer.board.receiveAttack(row, col);
-    showWinner();
 
     if (response) {
       cell.classList.remove('cell-empty');
@@ -250,6 +250,7 @@ const Game = function () {
       cell.classList.remove('cell-empty');
       cell.classList.add('cell-miss');
     }
+    showWinner();
   };
 
   const attackHandler = (event) => {
@@ -263,7 +264,6 @@ const Game = function () {
     cell.dataset.attacked = 'true';
     switchPlayer();
     let response = currentPlayer.board.receiveAttack(row, col);
-    showWinner();
 
     if (response) {
       cell.classList.remove('cell-ship');
@@ -272,6 +272,8 @@ const Game = function () {
       cell.classList.remove('cell-empty');
       cell.classList.add('cell-miss');
     }
+
+    showWinner();
   };
 
   const showWinner = () => {
